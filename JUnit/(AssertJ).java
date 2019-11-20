@@ -5,3 +5,4 @@ assertThat(count).isGreaterThan(original);
 assertThat(counters).extracting("count")
                         .contains(1,3,4)
                         .doesNotContain(2);
+

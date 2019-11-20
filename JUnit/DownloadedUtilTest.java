@@ -18,4 +18,3 @@ public class DownloadedUtilTest {
     assertThatNoFileDownloaded("test.jpg");
   }
  
-

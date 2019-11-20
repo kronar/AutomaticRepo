@@ -27,6 +27,3 @@ public class PasswordUtilTest {
     assertTrue(PasswordUtil.isStrongPassword("compUter12345"));
     assertTrue(PasswordUtil.isStrongPassword("COMPUTER12345"));
   }
-
-
-

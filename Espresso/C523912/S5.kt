@@ -32,19 +32,9 @@ class S5 {
 
     @Test
     fun s5() {
-//        val appCompatImageButton = onView(
-//                allOf(withId(R.id.btnClose),
-//                        childAtPosition(
-//                                allOf(withId(R.id.root),
-//                                        childAtPosition(
-//                                                withId(android.R.id.content),
-//                                                0)),
-//                                3),
-//                        isDisplayed()))
-//        appCompatImageButton.perform(click())
-
-            BaristaScrollInteractions.scrollTo(R.id.collectionTitleImageView)
-
+        
+        BaristaScrollInteractions.scrollTo(R.id.collectionTitleImageView)
+        
         val smLogoImageView = onView(
                 allOf(withId(R.id.image),
                         childAtPosition(

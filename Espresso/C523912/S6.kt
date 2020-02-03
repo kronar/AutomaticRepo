@@ -41,16 +41,6 @@ class S6 {
 
     @Test
     fun s6() {
-//        val appCompatImageButton = onView(
-//                allOf(withId(R.id.btnClose),
-//                        childAtPosition(
-//                                allOf(withId(R.id.root),
-//                                        childAtPosition(
-//                                                withId(android.R.id.content),
-//                                                0)),
-//                                3),
-//                        isDisplayed()))
-//        appCompatImageButton.perform(click())
 
         BaristaScrollInteractions.safelyScrollTo(R.id.actionsPager);
 

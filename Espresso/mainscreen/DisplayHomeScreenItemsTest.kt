@@ -15,6 +15,7 @@ import com.schibsted.spain.barista.assertion.BaristaFocusedAssertions.assertNotF
 import com.schibsted.spain.barista.assertion.BaristaVisibilityAssertions.assertDisplayed
 import com.schibsted.spain.barista.interaction.BaristaClickInteractions.clickOn
 import com.schibsted.spain.barista.interaction.BaristaScrollInteractions
+import com.schibsted.spain.barista.interaction.BaristaScrollInteractions.safelyScrollTo
 import com.schibsted.spain.barista.interaction.BaristaScrollInteractions.scrollTo
 import com.schibsted.spain.barista.interaction.BaristaSleepInteractions.sleep
 import com.schibsted.spain.barista.interaction.BaristaViewPagerInteractions.swipeViewPagerForward
@@ -43,7 +44,7 @@ class DisplayHomeScreenItemsTest {
     @Test
     fun footerMainFavorite() {
 
-        val appCompatImageButton2 = onView(
+        val info = onView(
                 allOf(withId(R.id.ibInfo),
                         childAtPosition(
                                 childAtPosition(
@@ -51,9 +52,9 @@ class DisplayHomeScreenItemsTest {
                                         0),
                                 0),
                         isDisplayed()))
-        appCompatImageButton2.perform(click())
+        info.perform(click())
 
-        val appCompatImageButton3 = onView(
+        val bInfo = onView(
                 allOf(childAtPosition(
                         allOf(withId(R.id.toolbar),
                                 childAtPosition(
@@ -61,18 +62,18 @@ class DisplayHomeScreenItemsTest {
                                         0)),
                         0),
                         isDisplayed()))
-        appCompatImageButton3.perform(click())
+        bInfo.perform(click())
 
-        val imageView = onView(
+        val logo = onView(
                 allOf(childAtPosition(
                         childAtPosition(
                                 withClassName(`is`("androidx.appcompat.widget.Toolbar")),
                                 0),
                         1),
                         isDisplayed()))
-        imageView.check(matches(isDisplayed()))
+        logo.check(matches(isDisplayed()))
 
-        val linearLayout = onView(
+        val slidesPager = onView(
                 allOf(withId(R.id.indicator),
                         childAtPosition(
                                 childAtPosition(
@@ -80,9 +81,9 @@ class DisplayHomeScreenItemsTest {
                                         0),
                                 1),
                         isDisplayed()))
-        linearLayout.check(matches(isDisplayed()))
+        slidesPager.check(matches(isDisplayed()))
 
-        val imageView2 = onView(
+        val bannersRecycler = onView(
                 allOf(withId(R.id.image),
                         childAtPosition(
                                 allOf(withId(R.id.bannersRecycler),
@@ -91,9 +92,9 @@ class DisplayHomeScreenItemsTest {
                                                 0)),
                                 0),
                         isDisplayed()))
-        imageView2.check(matches(isDisplayed()))
+        bannersRecycler.check(matches(isDisplayed()))
 
-        val view = onView(
+        val indicator = onView(
                 allOf(childAtPosition(
                         allOf(withId(R.id.indicator),
                                 childAtPosition(
@@ -101,9 +102,9 @@ class DisplayHomeScreenItemsTest {
                                         1)),
                         2),
                         isDisplayed()))
-        view.check(matches(isDisplayed()))
+        indicator.check(matches(isDisplayed()))
 
-        val view2 = onView(
+        val indicatorT = onView(
                 allOf(childAtPosition(
                         allOf(withId(R.id.indicator),
                                 childAtPosition(
@@ -111,9 +112,9 @@ class DisplayHomeScreenItemsTest {
                                         1)),
                         4),
                         isDisplayed()))
-        view2.check(matches(isDisplayed()))
+        indicatorT.check(matches(isDisplayed()))
 
-        val relativeLayout = onView(
+        val sportItemView = onView(
                 allOf(childAtPosition(
                         allOf(withId(R.id.sportItemView),
                                 childAtPosition(
@@ -121,9 +122,9 @@ class DisplayHomeScreenItemsTest {
                                         0)),
                         0),
                         isDisplayed()))
-        relativeLayout.check(matches(isDisplayed()))
+        sportItemView.check(matches(isDisplayed()))
 
-        val relativeLayout2 = onView(
+        val sportItemViewT = onView(
                 allOf(childAtPosition(
                         allOf(withId(R.id.sportItemView),
                                 childAtPosition(
@@ -131,11 +132,9 @@ class DisplayHomeScreenItemsTest {
                                         2)),
                         0),
                         isDisplayed()))
-        relativeLayout2.check(matches(isDisplayed()))
-
+        sportItemViewT.check(matches(isDisplayed()))
         swipeViewPagerForward(R.id.slider);
-
-        val appCompatTextView = onView(
+        val showAllButton = onView(
                 allOf(withId(R.id.showAllButton), withText("Показать все"),
                         childAtPosition(
                                 childAtPosition(
@@ -143,9 +142,9 @@ class DisplayHomeScreenItemsTest {
                                         0),
                                 1),
                         isDisplayed()))
-        appCompatTextView.perform(click())
+        showAllButton.perform(click())
 
-        val appCompatImageView2 = onView(
+        val bHome = onView(
                 allOf(withId(R.id.ivMain),
                         childAtPosition(
                                 allOf(withId(R.id.viewContainer),
@@ -154,7 +153,7 @@ class DisplayHomeScreenItemsTest {
                                                 1)),
                                 0),
                         isDisplayed()))
-        appCompatImageView2.perform(click())
+        bHome.perform(click())
     }
 
     @Test
@@ -204,7 +203,7 @@ class DisplayHomeScreenItemsTest {
 
     @Test
     fun brands () {
-        val appCompatImageButton = onView(
+        val tA = onView(
                     allOf(withId(R.id.btnClose),
                             childAtPosition(
                                     allOf(withId(R.id.root),
@@ -213,9 +212,9 @@ class DisplayHomeScreenItemsTest {
                                                     0)),
                                     3),
                             isDisplayed()))
-        appCompatImageButton.perform(click())
+        tA.perform(click())
         scrollTo(R.id.collectionTitleImageView)
-        val smLogoImageView = onView(
+        val brandU = onView(
                 allOf(withId(R.id.image),
                         childAtPosition(
                                 allOf(withId(R.id.slider),
@@ -224,9 +223,9 @@ class DisplayHomeScreenItemsTest {
                                                 1)),
                                 0),
                         isDisplayed()))
-        smLogoImageView.perform(click())
+        brandU.perform(click())
 
-        val appCompatImageButton2 = onView(
+        val backbrandU = onView(
                 allOf(childAtPosition(
                         allOf(withId(R.id.toolbar),
                                 childAtPosition(
@@ -234,9 +233,9 @@ class DisplayHomeScreenItemsTest {
                                         0)),
                         0),
                         isDisplayed()))
-        appCompatImageButton2.perform(click())
+        backbrandU.perform(click())
 
-        val smLogoImageView2 = onView(
+        val brandD = onView(
                 allOf(withId(R.id.image),
                         childAtPosition(
                                 allOf(withId(R.id.slider),
@@ -245,9 +244,9 @@ class DisplayHomeScreenItemsTest {
                                                 1)),
                                 3),
                         isDisplayed()))
-        smLogoImageView2.perform(click())
+        brandD.perform(click())
 
-        val appCompatImageButton3 = onView(
+        val backBrandD = onView(
                 allOf(childAtPosition(
                         allOf(withId(R.id.toolbar),
                                 childAtPosition(
@@ -255,11 +254,9 @@ class DisplayHomeScreenItemsTest {
                                         0)),
                         0),
                         isDisplayed()))
-        appCompatImageButton3.perform(click())
-
+        backBrandD.perform(click())
         swipeViewPagerForward(R.id.slider);
-
-        val appCompatTextView = onView(
+        val showAllButton = onView(
                 allOf(withId(R.id.showAllButton), withText("Показать все"),
                         childAtPosition(
                                 childAtPosition(
@@ -267,9 +264,9 @@ class DisplayHomeScreenItemsTest {
                                         0),
                                 1),
                         isDisplayed()))
-        appCompatTextView.perform(click())
+        showAllButton.perform(click())
 
-        val appCompatImageButton4 = onView(
+        val hint = onView(
                 allOf(withId(R.id.close),
                         childAtPosition(
                                 allOf(withId(R.id.content),
@@ -278,14 +275,14 @@ class DisplayHomeScreenItemsTest {
                                                 0)),
                                 5),
                         isDisplayed()))
-        appCompatImageButton4.perform(click())
+        hint.perform(click())
         assertDisplayed("Бренды")
     }
 
     @Test
     fun bottomBanner() {
-        BaristaScrollInteractions.safelyScrollTo(R.id.actionsPager);
-        val imageView = onView(
+        safelyScrollTo(R.id.actionsPager);
+        val bottomBanner = onView(
                 allOf(withId(R.id.image),
                         childAtPosition(
                                 allOf(withId(R.id.bannersRecycler),
@@ -294,7 +291,7 @@ class DisplayHomeScreenItemsTest {
                                                 0)),
                                 0),
                         isDisplayed()))
-        imageView.check(matches(isDisplayed()))
+        bottomBanner.check(matches(isDisplayed()))
         assertNotFocused(R.id.indicator)
     }
 

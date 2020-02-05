@@ -16,6 +16,7 @@ import com.schibsted.spain.barista.assertion.BaristaVisibilityAssertions
 import com.schibsted.spain.barista.interaction.BaristaClickInteractions
 import com.schibsted.spain.barista.interaction.BaristaScrollInteractions
 import com.schibsted.spain.barista.interaction.BaristaSleepInteractions.sleep
+import com.schibsted.spain.barista.interaction.BaristaViewPagerInteractions.swipeViewPagerForward
 import org.hamcrest.Description
 import org.hamcrest.Matcher
 import org.hamcrest.Matchers.`is`
@@ -132,6 +133,7 @@ class DisplayHomeScreenItemsTest {
                         isDisplayed()))
         relativeLayout2.check(matches(isDisplayed()))
 
+        swipeViewPagerForward(R.id.slider);
 
         val appCompatTextView = onView(
                 allOf(withId(R.id.showAllButton), withText("Показать все"),
@@ -255,6 +257,8 @@ class DisplayHomeScreenItemsTest {
                         isDisplayed()))
         appCompatImageButton3.perform(click())
 
+        swipeViewPagerForward(R.id.slider);
+
         val appCompatTextView = onView(
                 allOf(withId(R.id.showAllButton), withText("Показать все"),
                         childAtPosition(
@@ -264,6 +268,17 @@ class DisplayHomeScreenItemsTest {
                                 1),
                         isDisplayed()))
         appCompatTextView.perform(click())
+
+        val appCompatImageButton4 = onView(
+                allOf(withId(R.id.close),
+                        childAtPosition(
+                                allOf(withId(R.id.content),
+                                        childAtPosition(
+                                                withId(android.R.id.content),
+                                                0)),
+                                5),
+                        isDisplayed()))
+        appCompatImageButton4.perform(click())
         BaristaVisibilityAssertions.assertDisplayed("Бренды")
     }
 

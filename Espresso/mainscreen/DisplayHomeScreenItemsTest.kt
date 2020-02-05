@@ -11,10 +11,11 @@ import androidx.test.espresso.matcher.ViewMatchers.*
 import androidx.test.filters.LargeTest
 import androidx.test.rule.ActivityTestRule
 import androidx.test.runner.AndroidJUnit4
-import com.schibsted.spain.barista.assertion.BaristaFocusedAssertions
-import com.schibsted.spain.barista.assertion.BaristaVisibilityAssertions
-import com.schibsted.spain.barista.interaction.BaristaClickInteractions
+import com.schibsted.spain.barista.assertion.BaristaFocusedAssertions.assertNotFocused
+import com.schibsted.spain.barista.assertion.BaristaVisibilityAssertions.assertDisplayed
+import com.schibsted.spain.barista.interaction.BaristaClickInteractions.clickOn
 import com.schibsted.spain.barista.interaction.BaristaScrollInteractions
+import com.schibsted.spain.barista.interaction.BaristaScrollInteractions.scrollTo
 import com.schibsted.spain.barista.interaction.BaristaSleepInteractions.sleep
 import com.schibsted.spain.barista.interaction.BaristaViewPagerInteractions.swipeViewPagerForward
 import org.hamcrest.Description
@@ -23,7 +24,6 @@ import org.hamcrest.Matchers.`is`
 import org.hamcrest.Matchers.allOf
 import org.hamcrest.TypeSafeMatcher
 import org.hamcrest.core.IsInstanceOf
-import org.junit.Before
 import org.junit.Rule
 import org.junit.Test
 import org.junit.runner.RunWith
@@ -161,50 +161,50 @@ class DisplayHomeScreenItemsTest {
     fun clothesShoes_M() {
         sleep(2000);
         Espresso.pressBack()
-        BaristaScrollInteractions.scrollTo(R.id.clothes_and_shoes_pager)
-        BaristaVisibilityAssertions.assertDisplayed(R.id.clothes_and_shoes_pager)
-        BaristaVisibilityAssertions.assertDisplayed("Мужчинам")
-        BaristaVisibilityAssertions.assertDisplayed("Одежда")
-        BaristaClickInteractions.clickOn("Одежда")
-        BaristaVisibilityAssertions.assertDisplayed("Мужчинам")
+        scrollTo(R.id.clothes_and_shoes_pager)
+        assertDisplayed(R.id.clothes_and_shoes_pager)
+        assertDisplayed("Мужчинам")
+        assertDisplayed("Одежда")
+        clickOn("Одежда")
+        assertDisplayed("Мужчинам")
     }
 
     @Test
     fun clothesShoes_W() {
-        BaristaScrollInteractions.scrollTo(R.id.clothes_and_shoes_pager)
-        BaristaVisibilityAssertions.assertDisplayed(R.id.clothes_and_shoes_pager)
-        BaristaVisibilityAssertions.assertDisplayed("Женщинам")
-        BaristaClickInteractions.clickOn("Женщинам")
-        BaristaVisibilityAssertions.assertDisplayed("Обувь")
-        BaristaClickInteractions.clickOn("Обувь")
-        BaristaVisibilityAssertions.assertDisplayed("Женщинам")
+        scrollTo(R.id.clothes_and_shoes_pager)
+        assertDisplayed(R.id.clothes_and_shoes_pager)
+        assertDisplayed("Женщинам")
+        clickOn("Женщинам")
+        assertDisplayed("Обувь")
+        clickOn("Обувь")
+        assertDisplayed("Женщинам")
     }
 
     @Test
     fun clothesShoes_Ch() {
-        BaristaScrollInteractions.scrollTo(R.id.clothes_and_shoes_pager)
-        BaristaVisibilityAssertions.assertDisplayed(R.id.clothes_and_shoes_pager)
-        BaristaVisibilityAssertions.assertDisplayed("Детям")
-        BaristaClickInteractions.clickOn("Детям")
-        BaristaVisibilityAssertions.assertDisplayed("Одежда для мальчиков")
-        BaristaClickInteractions.clickOn("Одежда для мальчиков")
-        BaristaVisibilityAssertions.assertDisplayed("Детям")
+        scrollTo(R.id.clothes_and_shoes_pager)
+        assertDisplayed(R.id.clothes_and_shoes_pager)
+        assertDisplayed("Детям")
+        clickOn("Детям")
+        assertDisplayed("Одежда для мальчиков")
+        clickOn("Одежда для мальчиков")
+        assertDisplayed("Детям")
     }
 
     @Test
     fun clothesShoes_MA() {
         sleep(2000);
-        BaristaScrollInteractions.scrollTo(R.id.clothes_and_shoes_pager)
-        BaristaVisibilityAssertions.assertDisplayed(R.id.clothes_and_shoes_pager)
-        BaristaVisibilityAssertions.assertDisplayed("Женщинам")
-        BaristaScrollInteractions.scrollTo(R.id.catalogImageView)
-        BaristaClickInteractions.clickOn(R.id.catalogImageView)
-        BaristaFocusedAssertions.assertNotFocused("Мужчинам")
+        scrollTo(R.id.clothes_and_shoes_pager)
+        assertDisplayed(R.id.clothes_and_shoes_pager)
+        assertDisplayed("Женщинам")
+        scrollTo(R.id.catalogImageView)
+        clickOn(R.id.catalogImageView)
+        assertNotFocused("Мужчинам")
     }
 
     @Test
     fun brands () {
-                val appCompatImageButton = onView(
+        val appCompatImageButton = onView(
                     allOf(withId(R.id.btnClose),
                             childAtPosition(
                                     allOf(withId(R.id.root),
@@ -213,8 +213,8 @@ class DisplayHomeScreenItemsTest {
                                                     0)),
                                     3),
                             isDisplayed()))
-            appCompatImageButton.perform(click())
-        BaristaScrollInteractions.scrollTo(R.id.collectionTitleImageView)
+        appCompatImageButton.perform(click())
+        scrollTo(R.id.collectionTitleImageView)
         val smLogoImageView = onView(
                 allOf(withId(R.id.image),
                         childAtPosition(
@@ -279,7 +279,7 @@ class DisplayHomeScreenItemsTest {
                                 5),
                         isDisplayed()))
         appCompatImageButton4.perform(click())
-        BaristaVisibilityAssertions.assertDisplayed("Бренды")
+        assertDisplayed("Бренды")
     }
 
     @Test
@@ -295,7 +295,7 @@ class DisplayHomeScreenItemsTest {
                                 0),
                         isDisplayed()))
         imageView.check(matches(isDisplayed()))
-        BaristaFocusedAssertions.assertNotFocused(R.id.indicator)
+        assertNotFocused(R.id.indicator)
     }
 
     private fun childAtPosition(

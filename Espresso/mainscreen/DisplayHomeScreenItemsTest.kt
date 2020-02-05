@@ -144,7 +144,7 @@ class DisplayHomeScreenItemsTest {
                         isDisplayed()))
         showAllButton.perform(click())
 
-        val bHome = onView(
+        val bMain = onView(
                 allOf(withId(R.id.ivMain),
                         childAtPosition(
                                 allOf(withId(R.id.viewContainer),
@@ -153,7 +153,7 @@ class DisplayHomeScreenItemsTest {
                                                 1)),
                                 0),
                         isDisplayed()))
-        bHome.perform(click())
+        bMain.perform(click())
     }
 
     @Test

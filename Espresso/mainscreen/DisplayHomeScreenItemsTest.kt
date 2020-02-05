@@ -246,7 +246,7 @@ class DisplayHomeScreenItemsTest {
                         isDisplayed()))
         brandD.perform(click())
 
-        val backBrandD = onView(
+        val bBrandD = onView(
                 allOf(childAtPosition(
                         allOf(withId(R.id.toolbar),
                                 childAtPosition(
@@ -254,7 +254,7 @@ class DisplayHomeScreenItemsTest {
                                         0)),
                         0),
                         isDisplayed()))
-        backBrandD.perform(click())
+        bBrandD.perform(click())
         swipeViewPagerForward(R.id.slider);
         val showAllButton = onView(
                 allOf(withId(R.id.showAllButton), withText("Показать все"),

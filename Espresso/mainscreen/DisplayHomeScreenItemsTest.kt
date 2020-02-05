@@ -265,7 +265,7 @@ class DisplayHomeScreenItemsTest {
                                 1),
                         isDisplayed()))
         showAllButton.perform(click())
-
+        sleep(2000);
         val hint = onView(
                 allOf(withId(R.id.close),
                         childAtPosition(

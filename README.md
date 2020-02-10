@@ -11,7 +11,7 @@ QA Espresso, JUnit, Mockito
 
 ## License
 
-    Copyright 2018 Vasily Kovalevsky
+    Copyright 2019 Vasily Kovalevsky
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.

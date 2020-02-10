@@ -1,5 +1,5 @@
 # QARepo
- *QA Espresso, JUnit, Mockito*
+ *This directory contains Espresso, JUnit, Mockito tests*
 
 * [Mainscreen](https://github.com/eclorelavie/QARepo/tree/master/Espresso/mainscreen)
 

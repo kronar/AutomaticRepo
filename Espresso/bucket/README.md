@@ -1,1 +1,1 @@
-![]C597051CorrectDisplayGoodsBasket.gif
+![](C597051CorrectDisplayGoodsBasket.gif)

@@ -5,6 +5,6 @@ QA Espresso, JUnit, Mockito
 
 ![](DisplayHomeScreenItemsTest.kt.gif)
 
-[mainscreen](https://github.com/eclorelavie/QARepo/tree/master/Espresso/bucket)
+[bucket](https://github.com/eclorelavie/QARepo/tree/master/Espresso/bucket)
 
 ![](C597051CorrectDisplayGoodsBasket.gif)

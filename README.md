@@ -1,5 +1,5 @@
 # QARepo
-## ***QA Espresso, JUnit, Mockito***
+ ***QA Espresso, JUnit, Mockito***
 
 ## [mainscreen](https://github.com/eclorelavie/QARepo/tree/master/Espresso/mainscreen)
 

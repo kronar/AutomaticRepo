@@ -1,0 +1,1 @@
+![](DisplayHomeScreenItemsTest.kt.gif)

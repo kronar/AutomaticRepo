@@ -1,11 +1,11 @@
 # QARepo
  ***QA Espresso, JUnit, Mockito***
 
-* [mainscreen](https://github.com/eclorelavie/QARepo/tree/master/Espresso/mainscreen)
+* **[Mainscreen](https://github.com/eclorelavie/QARepo/tree/master/Espresso/mainscreen)
 
 ![](DisplayHomeScreenItemsTest.kt.gif)
 
-* [bucket](https://github.com/eclorelavie/QARepo/tree/master/Espresso/bucket)
+* **[Bucket](https://github.com/eclorelavie/QARepo/tree/master/Espresso/bucket)
 
 ![](C597051CorrectDisplayGoodsBasket.gif)
 

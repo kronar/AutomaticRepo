@@ -1,11 +1,11 @@
 # QARepo
  This directory contains Espresso, JUnit, Mockito tests
 
-* *[Mainscreen]*(https://github.com/eclorelavie/QARepo/tree/master/Espresso/mainscreen)
+* *[Mainscreen](https://github.com/eclorelavie/QARepo/tree/master/Espresso/mainscreen)*
 
 ![](DisplayHomeScreenItemsTest.kt.gif)
 
-* *[Bucket]*(https://github.com/eclorelavie/QARepo/tree/master/Espresso/bucket)
+* *[Bucket](https://github.com/eclorelavie/QARepo/tree/master/Espresso/bucket)*
 
 ![](C597051CorrectDisplayGoodsBasket.gif)
 
